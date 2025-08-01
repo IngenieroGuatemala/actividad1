@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/vista/main.java</file>
-            <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/modelo/Persona.java</file>
-            <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/modelo/cliente.java</file>
             <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/vista/frm_cliente.java</file>
+            <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/modelo/Persona.java</file>
+            <file>file:/C:/Users/excal/OneDrive/Documents/NetBeansProjects/%20poo2/src/modelo/Cliente.java</file>
         </group>
     </open-files>
 </project-private>

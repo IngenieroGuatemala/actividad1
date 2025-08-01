@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-import modelo.cliente;
+import modelo.Cliente;
 /**
  *
  * @author excal
@@ -15,8 +15,10 @@ public class frm_cliente extends javax.swing.JFrame {
     /**
      * Creates new form frm_cliente
      */
+    Cliente obj_cliente;
     public frm_cliente() {
         initComponents();
+        obj_cliente = new Cliente();
     }
 
     /**
@@ -41,6 +43,7 @@ public class frm_cliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txt_fecha_nacimiento = new javax.swing.JTextField();
         btn_aceptar = new javax.swing.JButton();
+        btn_modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +96,13 @@ public class frm_cliente extends javax.swing.JFrame {
             }
         });
 
+        btn_modificar.setText("Modificar");
+        btn_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,7 +117,9 @@ public class frm_cliente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_modificar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +155,8 @@ public class frm_cliente extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_modificar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -166,7 +179,7 @@ public class frm_cliente extends javax.swing.JFrame {
                     .addComponent(txt_fecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_aceptar)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -190,10 +203,10 @@ public class frm_cliente extends javax.swing.JFrame {
 
     private void txt_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonoActionPerformed
         // TODO add your handling code here:
-        cliente obj_cliente= new cliente();
+        Cliente obj_cliente = new Cliente();
         
-        obj_cliente.setnit(txt_nit.getText());
-        obj_cliente.setnombres(txt_nombres.getText());
+        obj_cliente.setNit(txt_nit.getText());
+        obj_cliente.setNombres(txt_nombres.getText());
         obj_cliente.setApellidos(txt_apellidos.getText());
         obj_cliente.setDireccion(txt_direccion.getText());
         obj_cliente.setTelefono(txt_telefono.getText());
@@ -203,8 +216,17 @@ public class frm_cliente extends javax.swing.JFrame {
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         // TODO add your handling code here:
+        obj_cliente = new Cliente (txt_nit.getText(),txt_nombres.getText(),txt_apellidos.getText(),txt_direccion.getText(),txt_telefono.getText(),txt_fecha_nacimiento.getText());
+        obj_cliente.agregar();
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
+    private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
+        // TODO add your handling code here:
+        obj_cliente.setNit(txt_nit.getText());
+        obj_cliente.agregar();    
+    }//GEN-LAST:event_btn_modificarActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -232,6 +254,7 @@ public class frm_cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aceptar;
+    private javax.swing.JButton btn_modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
